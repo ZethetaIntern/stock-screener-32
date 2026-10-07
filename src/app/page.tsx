@@ -1,5 +1,5 @@
-import StoreDemo from "@/components/StoreDemo";
+import Screener from "@/components/Screener";
 
 export default function Home() {
-  return <StoreDemo />;
+  return <Screener />;
 }

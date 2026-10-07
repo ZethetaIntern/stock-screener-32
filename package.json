@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tanstack/react-table": "^9.2.6",
+    "@tanstack/react-table": "^8.21.3",
     "@tanstack/react-virtual": "^3.14.13",
     "lightweight-charts": "^4.2.3",
     "next": "14.2.35",
