@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useStore } from "@/store";
 import { Tick } from "@/types/stock";
 import { MockSocket } from "./MockSocket";
+import { tickBus } from "./tickBus";
 
 const FLUSH_MS = 200;
 
@@ -72,6 +73,7 @@ export function useLiveFeed(rate: number, enabled: boolean): FeedStats {
       buffer.clear();
       const t0 = performance.now();
       applyTicks(batch);
+      tickBus.publish(batch);
       lastFlushMs = performance.now() - t0;
       flushes++;
     };
