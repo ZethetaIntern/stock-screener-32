@@ -1,5 +1,6 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { Stock } from "@/types/stock";
+import PriceCell from "./PriceCell";
 
 const compact = new Intl.NumberFormat("en-US", {
   notation: "compact",
@@ -14,7 +15,7 @@ export const columns: ColumnDef<Stock>[] = [
     accessorKey: "price",
     header: "Price",
     size: 110,
-    cell: (c) => c.getValue<number>().toFixed(2),
+    cell: (c) => <PriceCell value={c.getValue<number>()} />,
   },
   {
     accessorKey: "changePct",
