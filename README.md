@@ -60,14 +60,14 @@ Measured on: TODO (CPU, RAM, browser version), production build, Incognito.
 
 | Measurement | Result |
 |---|---|
-| Filter compute, 5,000 rows ( 0.20 / 0.30 ) 
-| Filter compute, 50,000 rows (1.30 / 1.50)
+| Filter compute, 5,000 rows (median / p95 ) | 0.20/0.30 | 
+| Filter compute, 50,000 rows (median / p95) | 1.30/1.50 |
 | Store update at 1,000 ticks/s | 0.50 ms |
 | Store update at 5,000 ticks/s | 1.70 ms |
 | UI updates at 1,000 and 5,000 ticks/s | 5 per second |
 | Rows in DOM | 27 to 37 |
-| FPS while streaming 5,000 ticks/s (60 / min 1)
-| Lighthouse Performance (68 / 69)
+| FPS while streaming 5,000 ticks/s (typical / min) | 60/min 1 |
+| Lighthouse Performance (desktop / mobile) | 68/69 |
 
 **Methodology.** Filter times are the worker's compute time (the pure function, 50 runs after warm-up). The 150 ms input debounce is a deliberate UX choice and is excluded. Store update time covers only the Zustand write, not the React re-render.
 
