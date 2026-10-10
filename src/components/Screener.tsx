@@ -6,6 +6,7 @@ import { generateStocks } from "@/lib/data/generateStocks";
 import StockTable from "./table/StockTable";
 import LiveFeedPanel from "./LiveFeedPanel";
 import FilterBar from "./FilterBar";
+import ChartPanel from "./chart/ChartPanel";
 
 export default function Screener() {
   const setStocks = useStore((s) => s.setStocks);
@@ -19,6 +20,7 @@ export default function Screener() {
       <h1 className="mb-4 text-2xl font-bold">Real-Time Stock Screener</h1>
       <LiveFeedPanel />
       <FilterBar />
+      <ChartPanel />
       <StockTable />
     </main>
   );

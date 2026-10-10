@@ -20,6 +20,8 @@ export default function StockTable() {
   const matched = useStore((s) => s.matchedIndexes);
   const sort = useStore((s) => s.sort);
   const setSort = useStore((s) => s.setSort);
+  const selectedSymbol = useStore((s) => s.selectedSymbol);
+  const selectSymbol = useStore((s) => s.selectSymbol);
 
   // If a filter result exists (Stage 5), show only those rows
   const data = useMemo(
@@ -99,7 +101,10 @@ export default function StockTable() {
             return (
               <div
                 key={row.id}
-                className="absolute left-0 top-0 flex w-full border-b border-neutral-800 text-sm hover:bg-neutral-800"
+                onClick={() => selectSymbol(row.original.symbol)}
+                className={`absolute left-0 top-0 flex w-full cursor-pointer border-b border-neutral-800 text-sm hover:bg-neutral-800 ${
+                  row.original.symbol === selectedSymbol ? "bg-blue-950" : ""
+                }`}
                 style={{
                   height: ROW_HEIGHT,
                   transform: `translateY(${v.start}px)`,
